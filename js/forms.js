@@ -5,8 +5,9 @@ const formEl = document.getElementById("loginForm");
 const usernameInputEl = document.getElementById("username");
 const emailInputEl = document.getElementById("email");
 const legalCheckboxEl = document.getElementById("legal");
+const timeRadioEl = document.getElementById("timeRadio");
 
-console.log("formEl ===", formEl);
+//console.log("formEl ===", formEl);
 
 formEl.addEventListener("submit", (event) => {
   //sustabdo veiksma  - issiuntima i kita psl
@@ -18,7 +19,18 @@ formEl.addEventListener("submit", (event) => {
   formValues.usernameValue = usernameInputEl.value.trim();
   formValues.emailValue = emailInputEl.value;
   formValues.legalCheckboxEl = legalCheckboxEl.checked;
+  const bestTimeRadioEl = timeRadioEl.querySelector("input:checked");
+
+  formValues.bestTimeValue = bestTimeRadioEl?.value
+    ? bestTimeRadioEl.value
+    : "nepasirinkta";
+
+  console.log("formValues.timeRadioEl ===", formValues.timeRadioEl);
+
   //console.log(legalCheckboxEl.checked);
+
+  //checkIfEmpty(usernameValue);
+
   if (formValues.legalCheckboxEl === false) {
     legalCheckboxEl.nextElementSibling.style.display = "block";
     return;
@@ -38,6 +50,7 @@ formEl.addEventListener("submit", (event) => {
     return;
   }
   console.log("Sending ", formValues);
+  //fetch();
 });
 
 //su sia funkcija isvalau visas formos klaidas
@@ -48,3 +61,5 @@ function clearErrors() {
     error.style.display = "none";
   }
 }
+
+function checkIfEmpty(usernameValue) {}

@@ -6,3 +6,9 @@
   margin-bottom: 10px;
   display: none;
 }
+
+.errorMsg {
+  color: tomato;
+  margin-bottom: 10px;
+  display: none;
+}
