@@ -1,2 +1,8 @@
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 @import url("reset.css");
+
+.errorFeedback {
+  color: tomato;
+  margin-bottom: 10px;
+  display: none;
+}
